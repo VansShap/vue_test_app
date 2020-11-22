@@ -19,15 +19,15 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow-x: hidden;
 }
 
 .sub_header {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(0, 0, 0);
   font-weight: 600;
   font-size: 24px;
@@ -37,5 +37,9 @@ export default {
   margin-left: 80px;
   letter-spacing: 1px;
   word-spacing: 1px;
+}
+
+body {
+  margin: 0;
 }
 </style>

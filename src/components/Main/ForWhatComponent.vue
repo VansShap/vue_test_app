@@ -1,13 +1,13 @@
 <template>
   <li>
-    <div class = "picture_block">
-      <img v-bind:src = "img"/>
+    <div class="picture_block">
+      <img v-bind:src="img"/>
     </div>
-    <div class = "text_block">
-      <p class = "for_what_list_label">
+    <div class="text_block">
+      <p class="for_what_list_label">
         {{title.toUpperCase()}}
       </p>
-      <p class = "for_what_list_text">{{text}}</p>
+      <p class="for_what_list_text">{{text}}</p>
     </div>
   </li>
 </template>
@@ -15,7 +15,20 @@
 <script>
 export default {
     name: 'ForWhatComponent',
-    props: ['img', 'title', 'text']
+    props: {
+      img: {
+        type: String,
+        requierd: true
+      },
+      title: {
+        type: String,
+        requierd: true
+      },
+      text: {
+        type: String,
+        requierd: true
+      }
+    }
 }
 </script>
 
@@ -40,7 +53,6 @@ ul.for_what_list li {
 }
 
 .for_what_list_label {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(0, 0, 0);
   font-weight: 300;
   font-size: 18px;
@@ -51,7 +63,6 @@ ul.for_what_list li {
 }
 
 .for_what_list_text {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(66, 66, 66);
   font-weight: 200;
   font-size: 14px;

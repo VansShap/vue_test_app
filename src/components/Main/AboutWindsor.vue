@@ -1,14 +1,27 @@
 <template>
-  <div v-bind:style = "{'background-color': color}" class = "windsor_block">
-    <p class = "windsor_block_label">{{label}}</p>
-    <p class = "windsor_block_text">{{text}}</p>
+  <div v-bind:style="{'background-color': color}" class="windsor_block">
+    <p class="windsor_block_label">{{label}}</p>
+    <p class="windsor_block_text">{{text}}</p>
   </div>
 </template>
 
 <script>
 export default {
     name: 'AboutWindsor',
-    props: ['color', 'label', 'text']
+    props: { 
+      color: {
+        type: String,
+        required: true
+      }, 
+      label: {
+        type: String,
+        required: true
+      }, 
+      text: {
+        type: String,
+        required: true
+      } 
+    }
 }
 </script>
 
@@ -17,7 +30,6 @@ export default {
   width: 45%;
   color: white;
   border-radius: 20px/20px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: left;
 }
 

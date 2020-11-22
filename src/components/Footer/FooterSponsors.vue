@@ -1,13 +1,18 @@
 <template>
-  <div class = "footer_sponsors_block">
-    <img class = "footer_sponsors_block_img" :src = "img"/>
+  <div class="footer_sponsors_block">
+    <img class="footer_sponsors_block_img" :src="img"/>
   </div>
 </template>
 
 <script>
 export default {
   name: "FooterSponsors",
-  props: ['img']
+  props: { 
+    img: {
+      type: String,
+      required: true
+    }
+  }
 }
 </script>
 

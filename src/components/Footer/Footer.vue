@@ -1,7 +1,7 @@
 <template>
   <footer>
-      <footer-sponsors :img = "img"></footer-sponsors>
-      <footer-links :img = "logo"></footer-links>
+      <footer-sponsors :img="img"></footer-sponsors>
+      <footer-links :img="logo"></footer-links>
   </footer>
 </template>
 

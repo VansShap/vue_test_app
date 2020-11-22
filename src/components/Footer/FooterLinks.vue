@@ -1,14 +1,14 @@
 <template>
-  <div class = "footer_links_block">
-    <div class = "footer_links_block_logo">
-      <img class = "footer_links_block_logo_img" :src = "img" />
+  <div class="footer_links_block">
+    <div class="footer_links_block_logo">
+      <img class="footer_links_block_logo_img" :src="img" />
     </div>
-    <div class = "footer_links_block_links">
-      <a class = "footer_links_block_link">О школе</a>
-      <a class = "footer_links_block_link">Курсы</a>
-      <a class = "footer_links_block_link">Преподаватели</a>
-      <a class = "footer_links_block_link">Новости</a>
-      <a class = "footer_links_block_link">Расписание</a>
+    <div class="footer_links_block_links">
+      <a class="footer_links_block_link">О школе</a>
+      <a class="footer_links_block_link">Курсы</a>
+      <a class="footer_links_block_link">Преподаватели</a>
+      <a class="footer_links_block_link">Новости</a>
+      <a class="footer_links_block_link">Расписание</a>
     </div>
     <div>+7 (495) 221 - 08 - 32</div>
   </div>
@@ -17,7 +17,12 @@
 <script>
 export default {
   name: "FooterLinks",
-  props: ['img']
+  props: { 
+    img: {
+      type: String,
+      required: true
+    }
+  }
 }
 </script>
 
@@ -30,7 +35,6 @@ export default {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   height: 20px;
 }
 

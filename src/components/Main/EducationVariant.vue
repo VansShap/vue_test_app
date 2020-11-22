@@ -1,24 +1,63 @@
 <template>
-    <div class = "variant">
-      <p class = "variant_label">{{label}}</p>
-      <p class = "variant_sublabel">{{sublabel}}</p>
-      <p class = "variant_text">{{text}}</p>
-      <p class = "variant_oldprice" v-if = "oldprice"><del>{{oldprice}}</del></p>
-      <p class = "variant_price">{{price}}</p>
-      <button class = "variant_button">Подать заявку</button>
+    <div class="variant">
+      <p class="variant_label">{{label}}</p>
+      <p class="variant_sublabel">{{sublabel}}</p>
+      <p class="variant_text">{{text}}</p>
+      <p class="variant_oldprice" v-if="oldprice"><del>{{oldprice}}</del></p>
+      <p class="variant_price">{{price}}</p>
+      <colorful-button :style="educationVariantButtonStyle" text="Подать заявку"></colorful-button>
     </div>
 </template>
 
 <script>
+import ColorfulButton from "./../AdditionalComponents/ColorfulButton.vue"
+
 export default {
     name: 'EducationVariant',
-    props: ['label', 'sublabel', 'text', 'oldprice', 'price']
+    components: {
+      ColorfulButton
+    },
+    data() {
+      return {
+        educationVariantButtonStyle: {
+          'padding': '15px 30px 15px 30px',
+          'color': 'white',
+          'background-color': 'rgb(235, 38, 78)',
+          'box-shadow': '0px 4px 6px 0px rgba(224, 78, 107, 0.7)',
+          'border-style': 'none',
+          'position': 'absolute',
+          'top': '95%',
+          'z-index': '10', 
+          'align-self': 'center'
+        }
+      }
+    },
+    props: { 
+      label: {
+        type: String,
+        requierd: true
+      }, 
+      sublabel: {
+        type: String,
+        requierd: true
+      }, 
+      text: {
+        type: String,
+        requierd: true
+      }, 
+      oldprice: {
+        type: String
+      }, 
+      price: {
+        type: String,
+        requierd: true
+      } 
+    }
 }
 </script>
 
 <style>
 .variant {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 27%;
   box-shadow: 0px 0px 8px 1px rgb(221, 221, 221);
   border-radius: 10px/10px;
@@ -79,27 +118,5 @@ export default {
   font-weight: 400;
   font-size: 22px;
   padding-bottom: 3%;
-}
-
-.variant_button {
-  height: 50px;
-  border-radius: 9px/9px;
-  padding: 15px 30px 15px 30px;
-  color: white;
-  background-color: rgb(235, 38, 78);
-  box-shadow: 0px 4px 6px 0px rgba(224, 78, 107, 0.7);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 16px;
-  border-style: none;
-  display: block;
-  position: absolute;
-  top: 95%;
-  z-index: 10;
-  cursor: pointer;
-  align-self: center;
-}
-
-.variant_button:focus {
-  outline: none;
 }
 </style>
